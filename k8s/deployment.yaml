@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysimple-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysimple-app
+  template:
+    metadata:
+      labels:
+        app: mysimple-app
+    spec:
+      containers:
+        - name: mysimple-container
+          image: sirajahmad77/mysimple-app:v1
+          ports:
+            - containerPort: 3000
